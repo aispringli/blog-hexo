@@ -1,8 +1,8 @@
 image: node:12-alpine3.10
 
-cache:
-  paths:
-    - node_modules/
+# cache:
+#   paths:
+#     - node_modules/
 
 stages:
   - build
