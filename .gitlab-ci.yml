@@ -22,7 +22,7 @@ build:
     expire_in: 2 days
 
 deploy:
-  stage: deplory
+  stage: deploy
   only:
     - master
   script:
