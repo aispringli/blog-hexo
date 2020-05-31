@@ -1,0 +1,29 @@
+image: node:12-alpine3.10
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - npm install hexo-cli -g
+    - npm install hexo-deployer-git --save
+    - npm install --save hexo-helper-live2d
+    - npm install live2d-widget-model-hibiki
+    - hexo generate
+  artifacts:
+    paths:
+      - public
+    expire_in: 2 days
+
+deploy:
+  only:
+    - master
+  script:
+    - sed -i s#@TOKEN#$TOKEN#g _config.yml
+    - hexo deploy

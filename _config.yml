@@ -86,8 +86,8 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
+# include:
+# exclude:
 ignore:
 
 # Extensions
@@ -98,4 +98,7 @@ theme: diaspora
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+  type: git
+  repo: https://@TOKEN@github.com/chunyingli/chunyingli.github.io
+  branch: master
+  message: Site updated： {{ now('YYYY-MM-DD HH:mm:ss') }})
