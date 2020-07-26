@@ -19,7 +19,7 @@ build:
     - hexo generate
   artifacts:
     paths:
-      - /public
+      - public
     expire_in: 2 days
 
 deploy:
