@@ -19,7 +19,7 @@ build:
     - hexo generate
   artifacts:
     paths:
-      - /
+      - /public
     expire_in: 2 days
 
 deploy:
@@ -27,7 +27,8 @@ deploy:
   only:
     - master
   script:
-    - ls
+    - npm config set registry https://registry.npm.taobao.org
+    - npm install hexo-cli -g
+    - npm install hexo-deployer-git --save
     - sed -i "s/TOKEN/${GITHUB_TOKEN}/g" _config.yml
-    - cat _config.yml
     - hexo deploy
