@@ -27,6 +27,6 @@ deploy:
   only:
     - master
   script:
-    - sed -i "s/TOKEN/${GITHUB-TOKEN}/g" _config.yml
+    - sed -i "s/TOKEN/${GITHUB_TOKEN}/g" _config.yml
     - cat _config.yml
     - hexo deploy
