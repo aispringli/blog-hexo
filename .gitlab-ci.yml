@@ -11,7 +11,6 @@ stages:
 build:
   stage: build
   script:
-    - kubectl --kubeconfig kub-config.conf -n gitlab-runner get pod 
     - npm install hexo-cli -g
     - npm install hexo-deployer-git --save
     - npm install --save hexo-helper-live2d
