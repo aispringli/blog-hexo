@@ -1,4 +1,4 @@
-image: node:12-alpine3.10
+image: meetup/node-github
 
 cache:
   paths:
