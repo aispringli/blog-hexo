@@ -31,4 +31,6 @@ deploy:
     - npm install hexo-cli -g
     - npm install hexo-deployer-git --save
     - sed -i "s/TOKEN/${GITHUB_TOKEN}/g" _config.yml
+    - git config --global user.email "3377939225@qq.com"
+    - git config --global user.name "spring"
     - hexo deploy
