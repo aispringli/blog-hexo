@@ -26,6 +26,10 @@ deploy:
   stage: deploy
   only:
     - master
+  artifacts:
+    paths:
+      - /
+    expire_in: 2 days
   script:
     - sed -i "s/TOKEN/${GITHUB_TOKEN}/g" _config.yml
     - cat _config.yml
