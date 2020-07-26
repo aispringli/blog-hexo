@@ -11,6 +11,7 @@ stages:
 build:
   stage: build
   script:
+    - npm config set registry https://registry.npm.taobao.org
     - npm install hexo-cli -g
     - npm install hexo-deployer-git --save
     - npm install --save hexo-helper-live2d
@@ -26,7 +27,7 @@ deploy:
   only:
     - master
   script:
-    - kubectl --kubeconfig kub-config.conf -n gitlab-runner get pod 
+    - kubectl --kubeconfig kub-config.conf -n gitlab-runner get pod
     - sed -i "s/TOKEN/${GITHUB-TOKEN}/g" _config.yml
     - cat _config.yml
     - hexo deploy
