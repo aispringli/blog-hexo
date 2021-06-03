@@ -22,17 +22,17 @@ build:
       - public
     expire_in: 2 days
 
-# variables: &VARIABLES
-#   IMAGE_PER_BRANCH_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHA
+variables: &VARIABLES
+  IMAGE_PER_BRANCH_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHA
 
-# build_img:
-  # stage: build
-  # only:
-  #   - /^release\/.+$/
-  # script:
-    # - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    # - docker build -t ${IMAGE_PER_BRANCH_COMMIT//:/-api:} -t ${IMAGE_PER_BRANCH//:/-api:} --build-arg CI_JOB_TOKEN=$CI_JOB_TOKEN .
-    # - docker push ${IMAGE_PER_BRANCH_COMMIT//:/-api:}
+build_img:
+  stage: build
+  only:
+    - /^release\/.+$/
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build -t ${IMAGE_PER_BRANCH_COMMIT//:/-api:} -t ${IMAGE_PER_BRANCH//:/-api:} --build-arg CI_JOB_TOKEN=$CI_JOB_TOKEN .
+    - docker push ${IMAGE_PER_BRANCH_COMMIT//:/-api:}
 
 deploy:
   stage: deploy
