@@ -1,4 +1,4 @@
-image: meetup/node-github
+image: springli/docker-node-git
 
 cache:
   paths:
