@@ -99,6 +99,7 @@ theme: diaspora
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://TOKEN@github.com/chunyingli/chunyingli.github.io
+  # repo: https://TOKEN@github.com/aispringli/aispringli.github.io
+  repo: https://TOKEN@github.com/aispringli/aispringli.github.io
   branch: master
   message: Site updated from  {{ now('YYYY-MM-DD HH:mm:ss') }})

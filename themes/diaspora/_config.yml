@@ -43,11 +43,11 @@ hitokoto: true
 
 # 链接(可选:facebook,twitter,github,wechat,email)
 links:
-    facebook: /
-    twitter: /
-    github: /
-    wechat: /img/logo.png
-    email: 3377939225@qq.com
+    # facebook: /
+    # twitter: /
+    github: https://github.com/aispringli
+    # wechat: /img/logo.png
+    email: mailto:3377939225@qq.com
   
 # 备案
 beian: 

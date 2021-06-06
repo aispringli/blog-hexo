@@ -2,7 +2,11 @@
     <ul id="menu-menu" class="menu">
         <% for (var i in theme.menu){ %>
         <li class="<%- theme.menu[i].indexOf('http') > -1 ? " " : "pview" %> menu-item menu-item-type-post_type menu-item-object-page">
+<<<<<<< HEAD
             <%- link_to(theme.menu[i].lastIndexOf('/') > 0 ? theme.menu[i] : theme.menu[i] + '/', i, {external: true})%>
+=======
+            <%- link_to(theme.menu[i] === '/' || theme.menu[i].lastIndexOf('/') > 0 ? theme.menu[i] : theme.menu[i] + '/', i, {external: true})%>
+>>>>>>> test
         </li>
         <%}%>
     </ul>
@@ -23,7 +27,11 @@
 	
     <p id="copyright">
         &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>.
+<<<<<<< HEAD
         <span> | </span>Github Link <%- link_to("https://github.com/chunyingli/", "Github", {external: true})%>
+=======
+        <span> | </span>Github 地址 <%- link_to("https://github.com/aispringli", "Github", {external: true})%>
+>>>>>>> test
         <!-- <span> | </span>Powered by <%- link_to("https://hexo.io/", "Hexo", {external: true})%>
         <span> | </span>Theme <%- link_to("https://github.com/Fechin/hexo-theme-diaspora", "Diaspora", {external: true})%> by Fechin -->
 		<% if (theme.beian.enable){ %>

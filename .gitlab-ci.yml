@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 image: meetup/node-github
+=======
+image: springli/docker-node-git
+>>>>>>> test
 
 cache:
   paths:
@@ -6,6 +10,10 @@ cache:
 
 stages:
   - build
+<<<<<<< HEAD
+=======
+  - build_img
+>>>>>>> test
   - deploy
 
 build:
@@ -26,13 +34,15 @@ variables: &VARIABLES
   IMAGE_PER_BRANCH_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHA
 
 build_img:
-  stage: build
-  only:
-    - /^release\/.+$/
+  stage: build_img
+  dependencies:
+    - build
+  # only:
+  #   - /^release\/.+$/
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build -t ${IMAGE_PER_BRANCH_COMMIT//:/-api:} -t ${IMAGE_PER_BRANCH//:/-api:} --build-arg CI_JOB_TOKEN=$CI_JOB_TOKEN .
-    - docker push ${IMAGE_PER_BRANCH_COMMIT//:/-api:}
+    - docker build -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA" .
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
 
 deploy:
   stage: deploy
