@@ -24,7 +24,7 @@ build:
     expire_in: 2 days
 
 variables: &VARIABLES
-  IMAGE_PER_BRANCH_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHA
+  IMAGE_PER_BRANCH_COMMIT: $CI_REGISTRY/$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
 
 build_img:
   stage: build_img
@@ -34,8 +34,8 @@ build_img:
   #   - /^release\/.+$/
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA" .
-    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+    - docker build -t "$IMAGE_PER_BRANCH_COMMIT" .
+    - docker push "$IMAGE_PER_BRANCH_COMMIT"
 
 deploy:
   stage: deploy
