@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: aispring
+  name: blog
+  labels: 
+    app: blog
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: blog
+  template: 
+    metadata: 
+      labels: 
+        app: blog
+    spec: 
+      containers:
+        - name: blog
+          image: registry.cn-shanghai.aliyuncs.com/aispring/blog:master
+          imagePullPolicy: Always
+          env: 
+            - name: TZ
+              value: Asia/Shanghai
+          ports: 
+            - name: http
+              containerPort: 80
+          livenessProbe: 
+            httpGet: 
+              path: /
+              port: 80
+            initialDelaySeconds: 180
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            timeoutSeconds: 1

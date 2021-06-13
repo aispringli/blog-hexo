@@ -1,16 +1,18 @@
-image: springli/docker-node-git
+image: busybox
 
 cache:
   paths:
     - node_modules/
 
 stages:
-  - build
+  - build_public
   - build_img
-  - deploy
+  - deploy_public
+  - deploy_img
 
 build:
-  stage: build
+  image: node
+  stage: build_public
   script:
     - npm config set registry https://registry.npm.taobao.org
     - npm install hexo-cli -g
@@ -26,19 +28,21 @@ build:
 variables: &VARIABLES
   IMAGE_PER_BRANCH_COMMIT: $CI_REGISTRY/$CI_REGISTRY_REPOSITORY/$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
 
-build_img:
+build:
+  image: docker
   stage: build_img
   dependencies:
-    - build
+    - build_public
   # only:
   #   - /^release\/.+$/
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build -t "$IMAGE_PER_BRANCH_COMMIT" .
+    - docker build -t "$IMAGE_PER_BRANCH_COMMIT" -f deploy/Dockerfile .
     - docker push "$IMAGE_PER_BRANCH_COMMIT"
 
 deploy:
-  stage: deploy
+  image: node
+  stage: deploy_img
   only:
     - master
   script:
@@ -49,3 +53,15 @@ deploy:
     - git config --global user.email "3377939225@qq.com"
     - git config --global user.name "spring"
     - hexo deploy
+
+deploy:
+  image: bitnami/kubectl
+  stage: deploy_img
+  dependencies:
+    - build_img
+  only:
+    - master
+  script:
+    - kubectl apply -f blog-deployment.yaml
+    - kubectl apply -f blog-service.yaml
+    - kubectl apply -f blog-web.yaml
