@@ -2,7 +2,7 @@
 title: k8s master ha 高可用集群
 comments: true
 mp3: 'http://link.hhtjim.com/163/425570952.mp3'
-cover: /img/welcome-cover.jpeg
+cover: https://resource.aispring.cloud/img/jpg/200.jpg
 tags:
   - k8s
 categories:
