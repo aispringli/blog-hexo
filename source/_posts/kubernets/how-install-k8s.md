@@ -91,6 +91,15 @@ $  kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Docu
 ```
 kubectl taint nodes --all node-role.kubernetes.io/master-
 ```
+### 10. 修改端口范围
+默认端口范围为30000-32767
+``` 
+修改配置文件 vim /etc/kubernetes/manifests/kube-apiserver.yaml
+$  - command:
+   - kube-apiserver
+   # 添加如下一行
+   - --service-node-port-range=1-65535 
+```
 
 ## 2、K8s集群
 ### 1. join master
