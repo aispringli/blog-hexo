@@ -61,5 +61,6 @@ deploy_img:
     - master
   script:
     - kubectl apply -f deploy/blog-deployment.yaml
+    - kubectl delete -f deploy/blog-deployment.yaml
     - kubectl apply -f deploy/blog-service.yaml
     - kubectl apply -f deploy/blog-web.yaml
