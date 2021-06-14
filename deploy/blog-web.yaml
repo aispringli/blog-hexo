@@ -23,3 +23,13 @@ spec:
                 name: blog
                 port: 
                   name: http
+    - host: blog.local.aispring.cloud
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service: 
+                name: blog
+                port: 
+                  name: http
