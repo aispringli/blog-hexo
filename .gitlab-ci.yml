@@ -31,8 +31,6 @@ variables: &VARIABLES
 build:
   image: docker
   stage: build_img
-  dependencies:
-    - build_public
   # only:
   #   - /^release\/.+$/
   script:
@@ -58,7 +56,7 @@ deploy:
   image: bitnami/kubectl
   stage: deploy_img
   dependencies:
-    - build_img
+    - build
   only:
     - master
   script:
