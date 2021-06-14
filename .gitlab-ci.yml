@@ -6,6 +6,7 @@ cache:
 
 stages:
   - build
+  - build_img
   - deploy
 
 build_public:
@@ -28,7 +29,9 @@ variables: &VARIABLES
 
 build_img:
   image: docker
-  stage: build
+  stage: build_img
+  needs:
+    - job: build_public
   # only:
   #   - /^release\/.+$/
   script:
