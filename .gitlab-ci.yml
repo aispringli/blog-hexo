@@ -60,7 +60,7 @@ deploy_img:
   only:
     - master
   script:
-    - kubectl delete -f deploy/blog-deployment.yaml
+    - kubectl -n aispring  get pods | grep blog |awk '{print$1}'|xargs kubectl -n aispring delete pods
     - kubectl apply -f deploy/blog-deployment.yaml
     - kubectl apply -f deploy/blog-service.yaml
     - kubectl apply -f deploy/blog-web.yaml
