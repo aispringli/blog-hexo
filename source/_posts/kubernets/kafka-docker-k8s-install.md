@@ -1,8 +1,8 @@
 ---
 title: 使用Docker和K8s安装Kafka及Manger
 comments: true
-mp3: 'http://link.hhtjim.com/163/425570952.mp3'
-cover: /img/cover/kubernets/kafka-docker-k8s-install.jpg
+mp3: '/music/blog.mp3'
+cover: /img/cover/kafka-docker-k8s-install.jpg
 keywords:
   - kafka
   - docker

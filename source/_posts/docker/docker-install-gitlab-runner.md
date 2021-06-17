@@ -1,8 +1,8 @@
 ---
 title: docker安装gitlab-runner
 comments: true
-mp3: 'http://link.hhtjim.com/163/425570952.mp3'
-cover: /img/cover/docker/docker-install-gitlab-runner.jpeg
+mp3: '/music/blog.mp3'
+cover: /img/cover/docker-install-gitlab-runner.jpeg
 tags:
   - docker
   - gitlab

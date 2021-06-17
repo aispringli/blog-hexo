@@ -1,8 +1,8 @@
 ---
 title: docker安装nginx
 comments: true
-mp3: 'http://link.hhtjim.com/163/425570952.mp3'
-cover: /img/cover/docker/docker-install-nginx.jpeg
+mp3: '/music/blog.mp3'
+cover: /img/cover/docker-install-nginx.jpeg
 tags:
   - docker
   - nginx

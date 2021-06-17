@@ -1,8 +1,8 @@
 ---
 title: Centos8安装和基本设置
 comments: true
-mp3: 'http://link.hhtjim.com/163/425570952.mp3'
-cover: /img/cover/centos/centos-start-settings.jpeg
+mp3: '/music/blog.mp3'
+cover: /img/cover/centos-start-settings.jpeg
 categories:
   - centos8教程
 keywords:

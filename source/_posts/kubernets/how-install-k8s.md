@@ -1,8 +1,8 @@
 ---
 title: Centos8安装K8s
 comments: true
-mp3: 'http://link.hhtjim.com/163/425570952.mp3'
-cover: /img/cover/kubernets/how-install-k8s.jpg
+mp3: '/music/blog.mp3'
+cover: /img/cover/how-install-k8s.jpg
 date: 2020-06-25 23:44:22
 updated: 2020-06-25 23:44:22
 tags:

@@ -1,8 +1,8 @@
 ---
 title: 软件开发版本控制
 comments: true
-mp3: 'http://link.hhtjim.com/163/425570952.mp3'
-cover: /img/cover/git/developer-version-control.jpeg
+mp3: '/music/blog.mp3'
+cover: /img/cover/developer-version-control.jpeg
 date: 2020-09-17 21:49:38
 updated: 2020-09-17 21:49:38
 tags:

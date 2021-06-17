@@ -1,8 +1,8 @@
 ---
 title: docker安装gitlab
 comments: true
-mp3: 'http://link.hhtjim.com/163/425570952.mp3'
-cover: /img/cover/docker/docker-install-gitlab.jpeg
+mp3: '/music/blog.mp3'
+cover: /img/cover/docker-install-gitlab.jpeg
 tags:
   - docker
   - gitlab

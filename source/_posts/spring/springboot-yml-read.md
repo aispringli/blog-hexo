@@ -1,8 +1,8 @@
 ---
 title: Spring Boot读取自定义yml文件
 comments: true
-mp3: 'http://link.hhtjim.com/163/425570952.mp3'
-cover: /img/cover/spring/springboot-yml-read.jpeg
+mp3: '/music/blog.mp3'
+cover: /img/cover/springboot-yml-read.jpeg
 tags:
   - SpringBoot
   - yml

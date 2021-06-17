@@ -1,8 +1,8 @@
 ---
 title: 如何使用Hexo
 comments: true
-mp3: 'http://link.hhtjim.com/163/425570952.mp3'
-cover: /img/cover/hexo/how-use-hexo.jpeg
+mp3: '/music/blog.mp3'
+cover: /img/cover/how-use-hexo.jpeg
 tags:
   - hexo
 keywords:

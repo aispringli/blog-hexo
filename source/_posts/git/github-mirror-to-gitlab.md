@@ -1,8 +1,8 @@
 ---
 title: github镜像同步gitlab
 comments: true
-mp3: 'http://link.hhtjim.com/163/425570952.mp3'
-cover: /img/cover/git/github-mirror-to-gitlab.jpeg
+mp3: '/music/blog.mp3'
+cover: /img/cover/github-mirror-to-gitlab.jpeg
 date: 2020-05-31 11:34:02
 updated: 2020-05-31 11:34:02
 tags:

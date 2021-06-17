@@ -9,12 +9,13 @@ description: 'aispring blog for myself'
 keywords: aispring, blog
 author: aispring 
 language: zh-CN
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.aispring.cloud
+url: https://blog.aispring.cloud
 root: /
+public_resource_host: https://resource.aispring.cloud:30443
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
