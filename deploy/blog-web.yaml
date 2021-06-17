@@ -23,7 +23,7 @@ spec:
                 name: blog
                 port: 
                   name: http
-    - host: blog.local.aispring.cloud
+    - host: blog-local.aispring.cloud
       http:
         paths:
           - pathType: Prefix
