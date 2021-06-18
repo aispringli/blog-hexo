@@ -1,6 +1,6 @@
 <div class="post">
     <a href="<%- url_for(post.path) %>" title="<%- post.title || "Untitled" %>">
-        <%- image_tag(config.public_resource_host + (post.cover || ("/img/jpg/"+Math.floor(Math.random() * 8000)+".jpg") || theme.cover[Math.floor(Math.random() * theme.cover.length)]), {class: "cover", width: 680, height: 440}) %>
+        <%- image_tag(config.public_resource_host + (post.cover || ("/img/jpg/"+Math.floor(Math.random() * 7000)+".jpg") || theme.cover[Math.floor(Math.random() * theme.cover.length)]), {class: "cover", width: 680, height: 440}) %>
     </a>
     <div class="else">
         <p><%- post.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>
