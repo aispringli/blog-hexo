@@ -9,11 +9,22 @@ metadata:
 spec:
   tls:
     - hosts:
-        - blog.local.aispring.cloud
-        - "*.local.aispring.cloud"
+        - blog.aispring.cloud
+        - www.aispring.cloud
+        - "*.aispring.cloud"
       secretName: aispring-https-certs
   rules:
-    - host: blog.local.aispring.cloud
+    - host: blog.aispring.cloud
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service: 
+                name: blog
+                port: 
+                  name: http
+    - host: www.aispring.cloud
       http:
         paths:
           - pathType: Prefix
