@@ -210,7 +210,7 @@ gitalk:
     distractionFreeMode: false
 
 # 网站关键字
-keywords: Fechin
+keywords: 小迎记
 
 # 要使用google_analytics进行统计的话，这里需要配置ID
 google_analytics: 
