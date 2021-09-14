@@ -2,7 +2,6 @@
 title: openvpn快速搭建和配置
 comments: true
 mp3: '/music/blog.mp3'
-cover: /img/welcome-cover.jpeg
 date: 2021-06-07 11:05:11
 updated: 2021-06-07 11:05:11
 tags:
