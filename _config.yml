@@ -96,11 +96,19 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: diaspora
 
+
+baidu_url_submit:
+  count: 20 ## 比如3，代表提交最新的三个链接
+  host: www.aispring.cloud ## 在百度站长平台中注册的域名
+  token: RNIosO7usU4eFbV2 ## 请注意这是您的秘钥， 请不要发布在公众仓库里!
+  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  # repo: https://TOKEN@github.com/aispringli/aispringli.github.io
-  repo: https://TOKEN@github.com/aispringli/aispringli.github.io
-  branch: master
-  message: Site updated from  {{ now('YYYY-MM-DD HH:mm:ss') }})
+  - type: git
+    # repo: https://TOKEN@github.com/aispringli/aispringli.github.io
+    repo: https://TOKEN@github.com/aispringli/aispringli.github.io
+    branch: master
+    message: Site updated from  {{ now('YYYY-MM-DD HH:mm:ss') }})
+  - type: baidu_url_submitter
