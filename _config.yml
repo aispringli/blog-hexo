@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: aispring blog
-subtitle: 'aispring blog'
-description: 'aispring blog for myself'
-keywords: aispring, blog
+title: aispring个人博客
+subtitle: 'aispring个人博客'
+description: 'aispring个人博客'
+keywords: aispring, blog，个人博客
 author: aispring 
 language: zh-CN
 timezone: 'Asia/Shanghai'
