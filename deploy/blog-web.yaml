@@ -12,6 +12,7 @@ spec:
     - hosts:
         - blog.aispring.cloud
         - www.aispring.cloud
+        - blog.local.aispring.cloud
       secretName: blog.aispring.cloud-https-certs
   rules:
     - host: blog.aispring.cloud
@@ -25,6 +26,16 @@ spec:
                 port: 
                   name: http
     - host: www.aispring.cloud
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service: 
+                name: blog
+                port: 
+                  name: http
+    - host: blog.local.aispring.cloud
       http:
         paths:
           - pathType: Prefix
