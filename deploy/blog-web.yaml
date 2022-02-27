@@ -11,9 +11,13 @@ spec:
   tls:
     - hosts:
         - blog.aispring.cloud
-        - www.aispring.cloud
-        - aispring.cloud
       secretName: blog.aispring.cloud-https-certs
+    - hosts:
+        - www.aispring.cloud
+      secretName: www.aispring.cloud-https-certs
+    - hosts:
+        - aispring.cloud
+      secretName: aispring.cloud-https-certs
   rules:
     - host: blog.aispring.cloud
       http:
