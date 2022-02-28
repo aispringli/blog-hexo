@@ -100,6 +100,11 @@ $  - command:
    # 添加如下一行
    - --service-node-port-range=1-65535 
 ```
+### 11. 开启路由转发
+``` 
+$ vim /etc/sysctl.conf
+net.ipv4.ip_forward = 1
+```
 
 ## 2、K8s集群
 ### 1. join master

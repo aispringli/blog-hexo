@@ -34,4 +34,10 @@ SELINUX=disabled
 $ systemctl disable firewalld.service
 ```
 
+### 4. 开启路由转发
+``` 
+$ vim /etc/sysctl.conf
+net.ipv4.ip_forward = 1
+```
+
 

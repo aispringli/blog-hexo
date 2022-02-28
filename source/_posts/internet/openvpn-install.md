@@ -61,3 +61,9 @@ route-nopull
 route 172.16.66.0 255.255.255.0 vpn_gateway
 route 192.168.66.0 255.255.255.0 vpn_gateway
 ```
+
+## 5. 开启路由转发
+``` 
+$ vim /etc/sysctl.conf
+net.ipv4.ip_forward = 1
+```
