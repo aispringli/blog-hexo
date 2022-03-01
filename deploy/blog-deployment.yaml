@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: aispring
+  namespace: pro
   name: blog
   labels: 
     app: blog
@@ -17,7 +17,7 @@ spec:
     spec: 
       containers:
         - name: blog
-          image: registry.cn-shanghai.aliyuncs.com/aispring/blog:master
+          image: IMAGE_NAME
           imagePullPolicy: Always
           env: 
             - name: TZ

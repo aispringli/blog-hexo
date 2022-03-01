@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: blog
-  namespace: aispring
+  namespace: pro
   annotations:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/use-regex: "true"
@@ -16,8 +16,8 @@ spec:
         - www.aispring.cloud
       secretName: www.aispring.cloud-https-certs
     - hosts:
-        - aispring.cloud
-      secretName: aispring.cloud-https-certs
+        - pro.aispring.cloud
+      secretName: pro.aispring.cloud-https-certs
   rules:
     - host: blog.aispring.cloud
       http:
@@ -39,7 +39,7 @@ spec:
                 name: blog
                 port: 
                   name: http
-    - host: aispring.cloud
+    - host: pro.aispring.cloud
       http:
         paths:
           - pathType: Prefix

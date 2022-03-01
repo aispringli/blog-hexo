@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: blog
-  namespace: aispring
+  namespace: pro
   labels:
     app: blog
 spec:

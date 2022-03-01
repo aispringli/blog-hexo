@@ -24,7 +24,7 @@ build_public:
     expire_in: 2 days
 
 variables: &VARIABLES
-  IMAGE_PER_BRANCH_COMMIT: $CI_REGISTRY/$CI_REGISTRY_REPOSITORY/$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+  IMAGE_PER_BRANCH_COMMIT: $CI_REGISTRY/$CI_REGISTRY_REPOSITORY/$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA
 
 build_img:
   image: docker
@@ -42,7 +42,7 @@ deploy_public:
   image: node
   stage: deploy
   only:
-    - master
+    - pro
   script:
     - npm config set registry https://registry.npm.taobao.org
     - npm install hexo-cli -g
@@ -60,8 +60,7 @@ deploy_img:
   only:
     - master
   script:
-    - kubectl apply -f deploy/blog-deployment.yaml
-    - kubectl delete -f deploy/blog-deployment.yaml
+    - sed -i "s/IMAGE_NAME/${IMAGE_PER_BRANCH_COMMIT}/g" deploy/blog-deployment.yaml
     - kubectl apply -f deploy/blog-deployment.yaml
     - kubectl apply -f deploy/blog-service.yaml
     - kubectl apply -f deploy/blog-web.yaml
