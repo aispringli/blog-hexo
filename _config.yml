@@ -15,7 +15,7 @@ timezone: 'Asia/Shanghai'
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://www.aispring.cloud
 root: /
-public_resource_host: https://resource.local.aispring.cloud:30443
+public_resource_host: https://s3.pro.aispring.cloud/public
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
