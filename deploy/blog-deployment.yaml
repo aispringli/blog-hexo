@@ -18,7 +18,7 @@ spec:
       containers:
         - name: blog
           image: IMAGE_NAME
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           env: 
             - name: TZ
               value: Asia/Shanghai
