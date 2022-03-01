@@ -36,7 +36,7 @@ build_img:
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker build -t "$IMAGE_PER_BRANCH_COMMIT" -f deploy/Dockerfile .
-    - docker push "$IMAGE_PER_BRANCH_COMMIT"
+    # - docker push "$IMAGE_PER_BRANCH_COMMIT"
 
 deploy_public:
   image: node
