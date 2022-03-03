@@ -10,6 +10,7 @@ keywords:
 date: 2020-10-24 22:58:10
 updated: 2020-10-24 22:58:10
 tags:
+  centos
 ---
 
 ## 1、安装Centos8
